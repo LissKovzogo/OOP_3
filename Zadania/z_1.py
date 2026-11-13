@@ -22,15 +22,12 @@ class SmartNumber:
         self.value = value
 
     def __gt__(self, other):
-        print(f"  [Перегрузка >]: Сравниваем {self.value} > {other.value}")
         return self.value > other.value
 
     def __lt__(self, other):
-        print(f"  [Перегрузка <]: Сравниваем {self.value} < {other.value}")
         return self.value < other.value
 
     def __eq__(self, other):
-        print(f"  [Перегрузка ==]: Проверяем {self.value} == {other.value}")
         return self.value == other.value
 
     def __repr__(self):

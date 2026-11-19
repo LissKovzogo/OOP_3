@@ -9,7 +9,7 @@ def test_smart_number_gt(capsys):
 
     a = SmartNumber(10)
     b = SmartNumber(5)
-    assert (a > b) is True
+    assert a > b
 
     captured = capsys.readouterr()
     assert "[Перегрузка >]: Сравниваем 10 > 5" in captured.out
@@ -19,7 +19,7 @@ def test_smart_number_lt(capsys):
 
     a = SmartNumber(3)
     b = SmartNumber(8)
-    assert (a < b) is True
+    assert a < b
 
     captured = capsys.readouterr()
     assert "[Перегрузка <]: Сравниваем 3 < 8" in captured.out
@@ -31,8 +31,8 @@ def test_smart_number_eq(capsys):
     b = SmartNumber(7)
     c = SmartNumber(9)
 
-    assert (a == b) is True
-    assert (a == c) is False
+    assert a == b
+    assert a != c
 
     captured = capsys.readouterr()
     assert "[Перегрузка ==]: Проверяем 7 == 7" in captured.out

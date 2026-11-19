@@ -8,7 +8,7 @@ from z_2 import WordCard, Dictionary, MAX_SIZE
 
 def test_wordcard_equality():
     card1 = WordCard("apple", "яблоко")
-    card2 = WordCard("apple", "яблочко")  # Перевод другой, но слово то же
+    card2 = WordCard("apple", "яблочко")  
     card3 = WordCard("dog", "собака")
 
     assert card1 == card2
@@ -52,7 +52,7 @@ def test_dictionary_change_name():
 def test_add_card_no_duplicates():
     d = Dictionary()
     d.add_card(WordCard("apple", "яблоко"))
-    d.add_card(WordCard("apple", "яблочко"))  # Дубль по слову
+    d.add_card(WordCard("apple", "яблочко")) 
 
     assert d.count == 1
 
@@ -73,12 +73,12 @@ def test_remove_card():
     d.add_card(WordCard("dog", "собака"))
 
     result = d.remove_card("apple")
-    assert result is True
+    assert result
     assert d.count == 1
     assert d.search("apple") is None
 
     result_fail = d.remove_card("unknown")
-    assert result_fail is False
+    assert not(result_fail)
     assert d.count == 1
 
 
